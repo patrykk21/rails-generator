@@ -27,16 +27,12 @@ docker build -t $APP_NAME -f Dockerfile.dev .
 docker run -it -v $(pwd):/app $APP_NAME /bin/bash
 ```
 
-### Remove .git directory
+### Remove unnecessary files
 
 ```sh
 rm -rf .git
-```
-
-### Remove README.md
-
-```sh
 rm README.md
+rm Gemfile Gemfile.lock
 ```
 
 ### Generate the Rails app
