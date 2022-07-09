@@ -10,3 +10,18 @@ services:
     volumes:
       - ./:/app
     command: tail -f /dev/null
+
+  psql:
+    image: postgres:14.4-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - psql:/var/lib/postgresql/data
+
+volumes:
+  psql:
+    driver: local
