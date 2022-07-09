@@ -43,6 +43,6 @@ rm README.md
 
 ```sh
 cd ..
-rails new app -d postgresql -MCT --skip-active-job --skip-active-storage
+rails new app -d postgresql -M -C -T --skip-active-job --skip-active-storage
 exit
 ```
