@@ -27,15 +27,22 @@ docker build -t $APP_NAME -f Dockerfile.dev .
 docker run -it -v $(pwd):/app $APP_NAME /bin/bash
 ```
 
-### Delete the .git folder
+### Remove .git directory
 
 ```sh
 rm -rf .git
+```
+
+### Remove README.md
+
+```sh
+rm README.md
 ```
 
 ### Generate the Rails app
 
 ```sh
 cd ..
-rails new app -d postgresql -MCT --skip-active-job --skip-active-storage --skip-webpack-install
+rails new app -d postgresql -MCT --skip-active-job --skip-active-storage
+exit
 ```
