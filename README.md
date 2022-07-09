@@ -40,7 +40,6 @@ rm Gemfile Gemfile.lock
 ```sh
 cd ..
 rails new app -d postgresql -M -C -T --skip-active-job --skip-active-storage
-exit
 ```
 
 #### Change database.yml
@@ -51,11 +50,4 @@ Add below info
 host: <%= ENV.fetch("DB_HOST") { "psql" } %>
 username: <%= ENV.fetch("DB_USER") { "postgres" } %>
 password: <%= ENV.fetch("DB_PASS") { "postgres" } %>
-```
-
-#### Create database
-
-```sh
-rails db:create
-RAILS_ENV=test db:create
 ```
