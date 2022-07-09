@@ -11,7 +11,7 @@ $ APP_NAME=app-name
 ### Clone this Git repo
 
 ```sh
-$ git clone <repo-link>
+$ git clone git@github.com:patrykk21/rails-generator.git
 ```
 
 ### Rename the directory
