@@ -11,7 +11,7 @@ $ APP_NAME=app-name
 ### Clone this Git repo
 
 ```sh
-$ git clone git@github.com:patrykk21/rails-generator.git $(APP_NAME)
+$ git clone git@github.com:patrykk21/rails-generator.git $APP_NAME
 ```
 
 ### Delete the .git folder
