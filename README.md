@@ -18,16 +18,16 @@ git clone git@github.com:patrykk21/rails-generator.git $APP_NAME
 
 ```sh
 cd $APP_NAME
-docker build -t $APP_NAME -f Dockerfile.dev .
+docker-compose -f docker-compose.dev.yml build app
 ```
 
 ### Run docker container
 
 ```sh
-docker run -it -v $(pwd):/app $APP_NAME /bin/bash
+docker-compose -f docker-compose.dev.yml run app /bin/bash
 ```
 
-### Remove unnecessary files
+#### Remove unnecessary files
 
 ```sh
 rm -rf .git
@@ -35,10 +35,27 @@ rm README.md
 rm Gemfile Gemfile.lock
 ```
 
-### Generate the Rails app
+#### Generate the Rails app
 
 ```sh
 cd ..
 rails new app -d postgresql -M -C -T --skip-active-job --skip-active-storage
 exit
+```
+
+#### Change database.yml
+
+Add below info
+
+```yml
+host: <%= ENV.fetch("DB_HOST") { "psql" } %>
+username: <%= ENV.fetch("DB_USER") { "postgres" } %>
+password: <%= ENV.fetch("DB_PASS") { "postgres" } %>
+```
+
+#### Create database
+
+```sh
+rails db:create
+RAILS_ENV=test db:create
 ```
