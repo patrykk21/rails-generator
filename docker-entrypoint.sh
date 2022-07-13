@@ -17,4 +17,7 @@ else
   cp_built_lock_file
 fi
 
+unset BUNDLE_PATH
+unset BUNDLE_BIN
+
 exec "$@"
